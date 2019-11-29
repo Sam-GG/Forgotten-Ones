@@ -60,7 +60,7 @@ public class EnemyMovement : MonoBehaviour
         //enemy movement patterns implemented here in given states
         switch(currentState){
 			case states.straight:
-			rb.velocity = new Vector2(rb.velocity.x, -speed);
+			rb.velocity = new Vector2(rb.velocity.x, -speed + 2);
 				break;
 			case states.wavy:
 				newY = transform.position.y - yChange;

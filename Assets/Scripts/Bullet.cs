@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Collision collision;
-	private float damage = 50f; //to be recieved from weapon class
+    public int damage;
 	
 
 
@@ -13,7 +13,9 @@ public class Bullet : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Enemy"))
         {
-            col.gameObject.SendMessage("health", damage); // this destroys the enemy
+            Enemy enemy = col.gameObject.GetComponent<Enemy>();
+            Player player = GameObject.Find("SpaceShip").GetComponent<Player>();
+            enemy.health(player.currentGun.shotPower, col.GetContact(0).point);
             Destroy(gameObject); // this destroys the bullet
         }
     }
