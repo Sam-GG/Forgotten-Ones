@@ -121,7 +121,7 @@ public class Level : MonoBehaviour
             //Random state 2  //These ones should shoot
             
             yield return new WaitForSeconds(1);
-            spawnArray.Enemy = Enemy[UnityEngine.Random.Range(2, LastIndexofArray)];
+            spawnArray.Enemy = Enemy[UnityEngine.Random.Range(2, LastIndexofArray)];           
             spawnArray.enemySpawner.canShoot = true;
             int tempA = a;
             while (tempA == a)
@@ -133,6 +133,7 @@ public class Level : MonoBehaviour
             if (a == 7 || a == 8)
             {
                 changeEnemyMovementType(0);   //center and twoThree are best straight
+                spawnArray.enemySpawner.fireRate = 1f;
             }
             else
             {

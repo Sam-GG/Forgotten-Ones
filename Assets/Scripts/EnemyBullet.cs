@@ -6,8 +6,10 @@ public class EnemyBullet : MonoBehaviour
 {
     Collision collision;
     public int damage;
-
-
+    public Player player;
+    Rigidbody2D rb;
+    Vector2 trajectory;
+    float bulletForce = 15f;
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -22,7 +24,10 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindObjectOfType<Player>();
+        trajectory = (player.transform.position - transform.position).normalized * bulletForce;
+        rb.velocity = new Vector2(trajectory.x, trajectory.y);
     }
 
     // Update is called once per frame

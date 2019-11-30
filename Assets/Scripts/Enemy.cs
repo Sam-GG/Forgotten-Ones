@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public bool canShoot = true;
     private float nextTimeToShoot = 0;
     public float bulletForce = 20f;
+    public float fireRate = 2f;
 
     public void health(int damage, Vector3 pos){ // get the damage and the location of the hit
         CurrHealth = CurrHealth - damage;
@@ -25,11 +26,12 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
+        //bullet.bulletForce = bulletForce;
         GameObject bulletObj = Instantiate(bullet, firePoint.position, Quaternion.identity);
         Rigidbody2D rb = bulletObj.GetComponent<Rigidbody2D>();
         
         rb.velocity = new Vector2(rb.velocity.x, -bulletForce + 2);
-        Destroy(bulletObj, 2);
+        Destroy(bulletObj, 3);
     }
 
     public void Die(Vector3 pos)
@@ -41,8 +43,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemySpawner enemySpawner = GetComponentInParent<EnemySpawner>();
+        EnemySpawner enemySpawner = GetComponentInParent<EnemySpawner>();       
         canShoot = enemySpawner.canShoot;
+        fireRate = enemySpawner.fireRate;
     }
 
     // Update is called once per frame
@@ -54,7 +57,7 @@ public class Enemy : MonoBehaviour
             {
                 SoundManager.PlaySound("LaserSound");
                 Shoot();
-                nextTimeToShoot = Time.time + 2f;
+                nextTimeToShoot = Time.time + fireRate;
             }
         }
         

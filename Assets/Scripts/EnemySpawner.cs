@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject Enemy;
     public bool canShoot;
+    public float fireRate = 2f;
     public float spawnRate = 0.4f;
     public state currentState;
     public float speed = 10f;
