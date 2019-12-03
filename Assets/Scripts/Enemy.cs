@@ -27,10 +27,8 @@ public class Enemy : MonoBehaviour
     void Shoot()
     {
         //bullet.bulletForce = bulletForce;
-        GameObject bulletObj = Instantiate(bullet, firePoint.position, bullet.transform.rotation);
-        Rigidbody2D rb = bulletObj.GetComponent<Rigidbody2D>();
-        
-        //rb.velocity = new Vector2(rb.velocity.x, -bulletForce);
+        GameObject bulletObj = Instantiate(bullet, firePoint.position, Quaternion.identity);
+        //bullet.transform.rotation
         Destroy(bulletObj, 3);
     }
 
