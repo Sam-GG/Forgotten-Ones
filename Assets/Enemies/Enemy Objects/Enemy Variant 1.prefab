@@ -78,10 +78,31 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 1688693714842500867}
+    - target: {fileID: 2100922700992087821, guid: 8e490fbc74acf8b4f8320ca93f1a7fb1,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 8564468035112203870, guid: 48b3f1d1ec1fca14d96ccb3c355c9af3,
+        type: 3}
     - target: {fileID: 3698514517540596995, guid: 8e490fbc74acf8b4f8320ca93f1a7fb1,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698514517540596995, guid: 8e490fbc74acf8b4f8320ca93f1a7fb1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698514517540596995, guid: 8e490fbc74acf8b4f8320ca93f1a7fb1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698514517540596995, guid: 8e490fbc74acf8b4f8320ca93f1a7fb1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e490fbc74acf8b4f8320ca93f1a7fb1, type: 3}

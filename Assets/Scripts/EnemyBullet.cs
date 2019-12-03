@@ -10,6 +10,7 @@ public class EnemyBullet : MonoBehaviour
     Rigidbody2D rb;
     Vector2 trajectory;
     float bulletForce = 15f;
+    Quaternion newQuaternion;
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -28,11 +29,12 @@ public class EnemyBullet : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
         trajectory = (player.transform.position - transform.position).normalized * bulletForce;
         rb.velocity = new Vector2(trajectory.x, trajectory.y);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, player.transform.position, (bulletForce * Time.deltaTime));
     }
 }

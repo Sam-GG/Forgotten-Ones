@@ -79,5 +79,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5970836173747452299, guid: 78d755483e1368346be71e4f871839fa,
         type: 3}
+    - target: {fileID: 4114962637967512845, guid: e0a5428bf31af114784acea23ab80486,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3847960996932229279, guid: c6cda11bea63ec747bcb18b059cd0e8c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0a5428bf31af114784acea23ab80486, type: 3}
