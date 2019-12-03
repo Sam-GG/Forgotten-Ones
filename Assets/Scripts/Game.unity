@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471728915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01, y: -0.52, z: 0}
+  m_LocalPosition: {x: -0.94, y: 1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2068257599}
@@ -803,7 +803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878165520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: -0.52, z: 0}
+  m_LocalPosition: {x: 1.28, y: 1.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2068257599}
@@ -1192,10 +1192,10 @@ GameObject:
   - component: {fileID: 2068257596}
   - component: {fileID: 2068257600}
   - component: {fileID: 2068257601}
-  - component: {fileID: 2068257602}
   - component: {fileID: 2068257595}
   - component: {fileID: 2068257603}
   - component: {fileID: 2068257604}
+  - component: {fileID: 2068257605}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Player
@@ -1361,22 +1361,6 @@ MonoBehaviour:
   bulletPrefab2: {fileID: 8068601019477260422, guid: 229f743109d2d8d439506c2eee4cbfd9,
     type: 3}
   bulletForce: 20
---- !u!58 &2068257602
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068257594}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.1451218, y: -1.9363713}
-  serializedVersion: 2
-  m_Radius: 1.5058851
 --- !u!114 &2068257603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1386,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 2068257597}
+--- !u!68 &2068257605
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068257594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.0110348, y: 1.1097788}
+  - {x: -1.4656594, y: 0.045692563}
+  - {x: -1.0120546, y: -1.1445069}
+  - {x: 0.20233001, y: -1.6630197}
+  - {x: 1.2687324, y: -1.2107292}
+  - {x: 1.8367941, y: -0.03613472}
+  - {x: 1.3528789, y: 1.2516211}
+  - {x: 0.763439, y: 0.61793804}
+  - {x: 0.71781474, y: 0.010992944}
+  - {x: 0.6309096, y: -0.099232376}
+  - {x: 0.1933671, y: 0.11696595}
+  - {x: -0.3310279, y: -0.056861877}
+  - {x: -0.38006622, y: 0.6805443}
+  - {x: -0.94705284, y: 1.1709759}
 --- !u!1 &2139760965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1537,7 @@ PrefabInstance:
     - target: {fileID: 8291485513216722836, guid: 8efac80312e57c44692306221fd67f10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8291485513216722836, guid: 8efac80312e57c44692306221fd67f10,
         type: 3}

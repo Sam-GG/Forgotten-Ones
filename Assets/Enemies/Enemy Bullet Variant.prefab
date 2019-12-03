@@ -158,6 +158,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3500280128934620568, guid: 6e23f50667ef04a47b34159f9123c57d,
+        type: 3}
+      propertyPath: ParticleSystemCollision
+      value: 
+      objectReference: {fileID: 5353041835575260469, guid: 165f8ade5c80b574793b9bf21b66796f,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 4310063849875409071, guid: 6e23f50667ef04a47b34159f9123c57d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6e23f50667ef04a47b34159f9123c57d, type: 3}
