@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b958e47934ff9a24f8f44082cc7b0a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rarity: 0
   CurrHealth: 100
   dropPrefab: {fileID: 2316033596819657403, guid: 85f3335998c811a47a8705d3d3a251be,
     type: 3}

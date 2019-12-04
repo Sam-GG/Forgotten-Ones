@@ -379,6 +379,20 @@ MonoBehaviour:
   - {fileID: 2337198141138626815, guid: 8e490fbc74acf8b4f8320ca93f1a7fb1, type: 3}
   - {fileID: 311830245101255423, guid: e0a5428bf31af114784acea23ab80486, type: 3}
   - {fileID: 118206437290565647, guid: 4f86963b82ec1874691156c7108a7bdd, type: 3}
+  ShootingEnemySprites:
+  - {fileID: 21300000, guid: d9d27cdd757ad344b91166da3c36f734, type: 3}
+  - {fileID: 21300000, guid: 4cb808541abd6004bb676a74de868d7d, type: 3}
+  - {fileID: 21300000, guid: 449bb2bde1e7359449eb9f8ee5b45cee, type: 3}
+  - {fileID: 21300000, guid: 8c2326c8dff09244eae60d78558c125d, type: 3}
+  - {fileID: 21300000, guid: d9d27cdd757ad344b91166da3c36f734, type: 3}
+  - {fileID: 21300000, guid: 2a8facdebe915b14f9a8df3c5361c734, type: 3}
+  - {fileID: 21300000, guid: 14b298e5720af1e47828ef3723fc1e7c, type: 3}
+  - {fileID: 21300000, guid: 3df70363a5af323498be1f11dfa9e4ca, type: 3}
+  NonShootingEnemySprites:
+  - {fileID: 21300000, guid: 0119e3fbf37a3f24c93bbcc7bae58041, type: 3}
+  - {fileID: 21300000, guid: 301010f6956581949bf45e6dbd65f9a7, type: 3}
+  - {fileID: 21300000, guid: cc85d7ac706311646af51d42f24a29ea, type: 3}
+  - {fileID: 21300000, guid: 809c0a4d7894c344faa6181b0419c942, type: 3}
   EnemySpeed: 10
   timeBetweenSpawns: 3
   SpaceBackground: {fileID: 1678137665}

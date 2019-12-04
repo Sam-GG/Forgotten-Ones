@@ -7,6 +7,8 @@ public class Level : MonoBehaviour
 
     public EnemySpawnArray spawnArray;
     public GameObject[] Enemy;
+    public Sprite[] ShootingEnemySprites;
+    public Sprite[] NonShootingEnemySprites;
     private int LastIndexofArray;
     public float EnemySpeed = 10f;
     public float timeBetweenSpawns = 3f;
@@ -96,8 +98,10 @@ public class Level : MonoBehaviour
             GameObject particleTemp = Instantiate(lvlChangeParticleFX, new Vector3(2, 1, 0), Quaternion.identity);
             control.ChangeBG();
             Destroy(particleTemp, 6);
-            //lvlUp = GetComponent<Text>();
-            //lvlUp.text = "LEVEL " + lvl;
+            Enemy[0].GetComponent<SpriteRenderer>().sprite = NonShootingEnemySprites[UnityEngine.Random.Range(0, NonShootingEnemySprites.Length)];
+            Enemy[1].GetComponent<SpriteRenderer>().sprite = NonShootingEnemySprites[UnityEngine.Random.Range(0, NonShootingEnemySprites.Length)];
+            Enemy[2].GetComponent<SpriteRenderer>().sprite = ShootingEnemySprites[UnityEngine.Random.Range(0, NonShootingEnemySprites.Length)];
+            Enemy[3].GetComponent<SpriteRenderer>().sprite = ShootingEnemySprites[UnityEngine.Random.Range(0, NonShootingEnemySprites.Length)];
             yield return new WaitForSeconds(6);
         }
         //prevent too many of one state type in a row
