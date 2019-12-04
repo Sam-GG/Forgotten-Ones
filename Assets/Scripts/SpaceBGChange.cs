@@ -5,13 +5,14 @@ using UnityEngine;
 public class SpaceBGChange : MonoBehaviour
 {
     public Texture[] SpaceBGs;
+    public GameObject canvasFlash;
     float tempTime = 5f;
     BGScroll control;
     BGScroll StarControl;
     GameObject Stars;
     int changeLevel = 0;
-    int Level = 1;
-    int nextLevel = 300;
+    //int Level = 1;
+    //int nextLevel = 300;
     int textureChoice;
     float currentScrollSpeedSpace = 1f;
     float currentScrollSpeedStars = 0.3f;
@@ -26,13 +27,15 @@ public class SpaceBGChange : MonoBehaviour
         gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = SpaceBGs[textureChoice];
     }
 
-    void ChangeBG()
+    public void ChangeBG()
     {
         int temp = textureChoice;
         while (textureChoice == temp)
         {
             textureChoice = (int)UnityEngine.Random.Range(0, SpaceBGs.Length);
         }
+        GameObject flash = Instantiate(canvasFlash, transform.position, Quaternion.identity);
+        Destroy(flash, 0.2f);
         gameObject.GetComponent<Renderer>().sharedMaterial.mainTexture = SpaceBGs[textureChoice];
         currentScrollSpeedSpace = currentScrollSpeedSpace * 1.25f;
         currentScrollSpeedStars = currentScrollSpeedStars * 1.25f;
@@ -43,12 +46,12 @@ public class SpaceBGChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ScoreScript.scoreValue >= nextLevel)
-        {
-            Level += 1;
-            nextLevel += 300;
-            ChangeBG();
-        }
+        //if (ScoreScript.scoreValue >= nextLevel)
+        //{
+        //    Level += 1;
+        //    nextLevel += 300;
+        //    ChangeBG();
+        //}
 
     }
 }

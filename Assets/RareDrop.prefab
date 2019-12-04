@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3358990653870671616}
   - component: {fileID: 4369490295631741716}
   - component: {fileID: 3164113535991445885}
-  - component: {fileID: 3005850588270106775}
+  - component: {fileID: -2596284624532889376}
   m_Layer: 0
   m_Name: RareDrop
   m_TagString: Drop
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.7952935
---- !u!114 &3005850588270106775
+--- !u!114 &-2596284624532889376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,5 +112,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wm: {fileID: 0}
-  player: {fileID: 0}
-  weapon: {fileID: 0}
+  rarity: 0

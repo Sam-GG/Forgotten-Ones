@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 539554105510685688}
   - component: {fileID: 3284958456492966092}
   - component: {fileID: 2091681005690689664}
-  - component: {fileID: 2412437867270416358}
+  - component: {fileID: 3069115108023130879}
   m_Layer: 0
   m_Name: CommonDrop
   m_TagString: Drop
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.7850001
---- !u!114 &2412437867270416358
+--- !u!114 &3069115108023130879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,5 +112,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wm: {fileID: 0}
-  player: {fileID: 0}
-  weapon: {fileID: 0}
+  rarity: 0

@@ -5,17 +5,16 @@ using UnityEngine;
 public class Drop : MonoBehaviour
 {
 
-    public WeaponManager wm;
-    public Weapon weapon;
+    public int rarity;
     //public GameObject p1,p2,p3;
 
+        /*
     public Drop(Vector3 pos, GameObject p1, GameObject p2, GameObject p3)
     {
         wm = GameObject.Find("SpaceShip").GetComponent<WeaponManager>(); 
         weapon = wm.GenerateWeapon();
         CreateDrop(pos, p1, p2, p3);
     }
-    /*
 
     void OnCollisionEnter2D(Collision2D col)
     {       
@@ -30,23 +29,28 @@ public class Drop : MonoBehaviour
 
     public void CreateDrop(Vector3 pos, GameObject p1, GameObject p2, GameObject p3)
     {
-        GameObject dropPrefab;
-        float rand = Random.Range(0, 10);
-        if (rand >= 7 && rand <= 8)
+        GameObject dropObject;
+        Drop drop;
+        float rand = Random.Range(1f, 100f);
+        if (rand < 60f)
         {
-            if (weapon.rarity == 1)
-            {
-                dropPrefab = Instantiate(p1, new Vector2(pos.x, pos.y), Quaternion.identity);
-            }
-            else if (weapon.rarity == 2)
-            {
-                dropPrefab = Instantiate(p2, new Vector2(pos.x, pos.y), Quaternion.identity);
-            }
-            else
-            {
-                dropPrefab = Instantiate(p3, new Vector2(pos.x, pos.y), Quaternion.identity);
-            }
+            dropObject = Instantiate(p1, new Vector2(pos.x, pos.y), Quaternion.identity);
+            drop = dropObject.GetComponent<Drop>();
+            drop.rarity = 1;
         }
+        else if (rand >= 60 && rand <= 95)
+        {
+            dropObject = Instantiate(p2, new Vector2(pos.x, pos.y), Quaternion.identity);
+            drop = dropObject.GetComponent<Drop>();
+            drop.rarity = 2;
+        }
+        else
+        {
+            dropObject = Instantiate(p3, new Vector2(pos.x, pos.y), Quaternion.identity);
+            drop = dropObject.GetComponent<Drop>();
+            drop.rarity = 3;
+        }
+        Destroy(dropObject, 4);
     }
 
     

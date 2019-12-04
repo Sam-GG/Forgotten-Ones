@@ -11,6 +11,7 @@ public class EnemyBullet : MonoBehaviour
     Vector2 trajectory;
     float bulletForce = 15f;
     public GameObject ParticleSystemCollision;
+    public GameObject canvasFlash;
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -18,7 +19,9 @@ public class EnemyBullet : MonoBehaviour
         {
             Player player = GameObject.Find("SpaceShip").GetComponent<Player>();
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
-            player.Health -= 100;           
+            player.Health -= 100;      
+            GameObject flash = Instantiate(canvasFlash, transform.position, Quaternion.identity);
+            Destroy(flash, 0.1f);
             GameObject explosion = Instantiate(ParticleSystemCollision, transform.position, Quaternion.identity);
             explosion.transform.parent = player.transform;
             explosion.transform.Rotate(95, 0, 0);

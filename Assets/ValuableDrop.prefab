@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3306833721651660937}
   - component: {fileID: 8800061246990357783}
   - component: {fileID: 8449023831810104939}
-  - component: {fileID: 1861587120701493953}
+  - component: {fileID: 8735342462856817239}
   m_Layer: 0
   m_Name: ValuableDrop
   m_TagString: Drop
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.8052951
---- !u!114 &1861587120701493953
+--- !u!114 &8735342462856817239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,5 +112,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wm: {fileID: 0}
-  player: {fileID: 0}
-  weapon: {fileID: 0}
+  rarity: 0

@@ -200,9 +200,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrHealth: 100
-  dropPrefab: {fileID: 0}
-  dropPrefab1: {fileID: 0}
-  dropPrefab2: {fileID: 0}
+  dropPrefab: {fileID: 2316033596819657403, guid: 85f3335998c811a47a8705d3d3a251be,
+    type: 3}
+  dropPrefab1: {fileID: 2782578692287013535, guid: efa7db002d3914644ab18e6b67af426a,
+    type: 3}
+  dropPrefab2: {fileID: 2684200413065774912, guid: 613bd75646bb5164ca611a800c0ac135,
+    type: 3}
   firePoint: {fileID: 7740460080506842193}
   bullet: {fileID: 4310063849875409064, guid: 6e23f50667ef04a47b34159f9123c57d, type: 3}
+  canShoot: 1
   bulletForce: 20
+  fireRate: 2

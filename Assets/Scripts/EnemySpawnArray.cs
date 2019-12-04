@@ -59,7 +59,7 @@ public class EnemySpawnArray : MonoBehaviour
         //instantiates enemySpawner into game as "obj"
 		EnemySpawner obj = Instantiate(enemySpawner, spawnLocation, Quaternion.identity);
         
-		Destroy(obj, 10);
+		Destroy(obj, 1);
 	}
 	
 

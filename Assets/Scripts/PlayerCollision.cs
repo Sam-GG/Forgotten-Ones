@@ -5,15 +5,20 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
 	public PlayerMovement movement;
+    Player player;
 
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		if (col.gameObject.tag.Equals ("Enemy"))
-		{
-			SoundManager.PlaySound("ExplosionSound");
-			movement.enabled = false;
-			FindObjectOfType<GameManager>().EndGame();
-		}
+        player = gameObject.GetComponent<Player>();
+        if (player.GodMode != true) {
+            if (col.gameObject.tag.Equals("Enemy"))
+            {
+                SoundManager.PlaySound("ExplosionSound");
+                movement.enabled = false;
+                FindObjectOfType<GameManager>().EndGame();
+            }
+        } 
+		
 	}
 }

@@ -34,7 +34,9 @@ public class EnemySpawner : MonoBehaviour
             //sets enemy to be child of spawner
             obj.transform.parent = transform;
             //Destroys enemy after 10 seconds ( couldnt get isOffScreen -> Destroy type thing to work)
-            Destroy(obj, 10);
+            Destroy(obj, 9);
+        Destroy(gameObject, 7);
+            
     }
 
     // Update is called once per frame

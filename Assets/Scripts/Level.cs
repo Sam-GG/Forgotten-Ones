@@ -10,6 +10,9 @@ public class Level : MonoBehaviour
     private int LastIndexofArray;
     public float EnemySpeed = 10f;
     public float timeBetweenSpawns = 3f;
+    public GameObject SpaceBackground;
+    SpaceBGChange control;
+    public GameObject lvlChangeParticleFX;
     private float yChangeMod = 0.06f;
     private float nextTimeToSpawn = 0f;
     private int keepTrackOfPlayLength = 0;
@@ -17,6 +20,9 @@ public class Level : MonoBehaviour
     private int a; //random num Gen for State 2 shooting type's Movement Pattern
     private int numTimesXisZero = 0;
     
+    int nextLevel = 300;
+    bool changingLevels = false;
+    //Text lvlUp;
 
     void changeState(int i)
     {
@@ -85,6 +91,15 @@ public class Level : MonoBehaviour
 
     IEnumerator MyCoroutine()
     {
+        if (changingLevels == true)
+        {
+            GameObject particleTemp = Instantiate(lvlChangeParticleFX, new Vector3(2, 1, 0), Quaternion.identity);
+            control.ChangeBG();
+            Destroy(particleTemp, 6);
+            //lvlUp = GetComponent<Text>();
+            //lvlUp.text = "LEVEL " + lvl;
+            yield return new WaitForSeconds(6);
+        }
         //prevent too many of one state type in a row
         if (numTimesXisZero >= 2)
         {
@@ -150,7 +165,8 @@ public class Level : MonoBehaviour
     void Start()
     {
         LastIndexofArray = Enemy.Length;
-       
+        control = SpaceBackground.GetComponent<SpaceBGChange>();
+
     }
 
     // Update is called once per frame
@@ -161,11 +177,15 @@ public class Level : MonoBehaviour
         
         if (Time.time >= nextTimeToSpawn)
         {
-            if (keepTrackOfPlayLength == 10)   // a way to increase enemy speed through out time, this could be score based later
+            if (ScoreScript.scoreValue >= nextLevel)
             {
+                NextLevel.lvl += 1;
+                nextLevel += 300;
+                
+                changingLevels = true;
                 EnemySpeed += 2.5f;
-                keepTrackOfPlayLength = 0;
             }
+            
             if (numTimesXisZero >= 3 || numTimesXisZero <= -2)
             {
                 numTimesXisZero = 0;
@@ -175,6 +195,7 @@ public class Level : MonoBehaviour
             spawnArray.enemySpawner.yChange = EnemySpeed / 133f;
             spawnArray.enemySpawner.yChangeMod = EnemySpeed / 166f;
             StartCoroutine("MyCoroutine");
+            changingLevels = false;
             nextTimeToSpawn = Time.time + timeBetweenSpawns;
             if (x == 0)
             {

@@ -8,16 +8,22 @@ public class Shooting : MonoBehaviour
 	public GameObject bulletPrefab;
     public GameObject bulletPrefab1;
     public GameObject bulletPrefab2;
-    public float bulletForce = 20f;
+    public float bulletForce = 40f;
     Player player;
+    public float nextShot = 0.0f;
+    public float myTime = 0.0f;
+    public float shotPeriod;
 	
     // Update is called once per frame
     void Update()
     {
-    	if (Input.GetButtonDown("Fire1"))
+        myTime = myTime + Time.deltaTime;
+    	if (Input.GetButton("Fire1") && myTime >= nextShot)
     	{
-            SoundManager.PlaySound("LaserSound");
+            nextShot = myTime + shotPeriod;
     		Shoot();
+            nextShot = nextShot - myTime;
+            myTime = 0.0f;
     	}
     }
 
