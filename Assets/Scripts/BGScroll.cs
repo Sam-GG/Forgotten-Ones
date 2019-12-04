@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGScroll : MonoBehaviour {
 	
-	public float scroll_Speed = 0.1f;
+	public float scroll_Speed = 1f;
 	
 	private MeshRenderer mesh_Renderer;
 	private float x_Scroll;
