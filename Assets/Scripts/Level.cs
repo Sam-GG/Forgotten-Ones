@@ -19,8 +19,8 @@ public class Level : MonoBehaviour
     private int x; // random Gen num for which state to do
     private int a; //random num Gen for State 2 shooting type's Movement Pattern
     private int numTimesXisZero = 0;
-    
-    int nextLevel = 300;
+    private float enemyFireRate = 2f;   //smaller is faster
+    int nextLevel = 500;
     bool changingLevels = false;
     //Text lvlUp;
 
@@ -148,11 +148,12 @@ public class Level : MonoBehaviour
             if (a == 7 || a == 8)
             {
                 changeEnemyMovementType(0);   //center and twoThree are best straight
-                spawnArray.enemySpawner.fireRate = 1f;
+                spawnArray.enemySpawner.fireRate = enemyFireRate/2f;
             }
             else
             {
                 changeEnemyMovementType(UnityEngine.Random.Range(0, 3));  //otherwise choose any
+                spawnArray.enemySpawner.fireRate = enemyFireRate;
             }
             spawnArray.enemySpawner.speed = spawnArray.enemySpawner.speed / 2;
             spawnArray.ExecuteState();          
@@ -180,10 +181,15 @@ public class Level : MonoBehaviour
             if (ScoreScript.scoreValue >= nextLevel)
             {
                 NextLevel.lvl += 1;
-                nextLevel += 300;
+                nextLevel += 500;
                 
                 changingLevels = true;
-                EnemySpeed += 2.5f;
+                EnemySpeed += 3f;
+                if (enemyFireRate >= 0.8)
+                {
+                    enemyFireRate -= 0.2f;
+                }
+                
             }
             
             if (numTimesXisZero >= 3 || numTimesXisZero <= -2)
