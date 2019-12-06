@@ -9,19 +9,19 @@ public class EnemyCollision : MonoBehaviour
 	private Enemy enemy;
 
      Collision collision;
-	void OnCollisionEnter2D(Collision2D col){
-        if (col.gameObject.tag.Equals("Bullet"))
-        {
-            ScoreScript.scoreValue += 10;
-            SoundManager.PlaySound("ExplosionSound");
-            //enemy.health(50f); 
-            Destroy(col.gameObject);
-            Destroy(gameObject); // this destroys the bullet
-        }
-        //if (col.gameObject.tag.Equals("Player"))
-        //{
-          //  movement.enabled = false;
-            //FindObjectOfType<GameManager>().EndGame();
-        //}
-    }
+	//void OnCollisionEnter2D(Collision2D col){
+ //       if (col.gameObject.tag.Equals("Bullet"))
+ //       {
+ //           ScoreScript.scoreValue += 10;
+ //           SoundManager.PlaySound("ExplosionSound");
+ //           //enemy.health(50f); 
+ //           Destroy(col.gameObject);
+ //           Destroy(gameObject); // this destroys the bullet
+ //       }
+ //       //if (col.gameObject.tag.Equals("Player"))
+ //       //{
+ //         //  movement.enabled = false;
+ //           //FindObjectOfType<GameManager>().EndGame();
+ //       //}
+ //   }
 }

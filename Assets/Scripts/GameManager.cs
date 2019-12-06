@@ -14,12 +14,19 @@ public class GameManager : MonoBehaviour
 		{
 			GameEnded = true;
 			Debug.Log("Game Over");
-			Restart();
-		}
+            SceneManager.LoadScene("LeaderBoardSampleScene");
+            //Restart();
+        }
 	}
 
-	void Restart()
+    IEnumerator MyCoroutine()
+    {
+
+        yield return new WaitForSeconds(10);
+    }
+
+    public void Restart()
 	{
-		SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("Menu");
 	}
 }

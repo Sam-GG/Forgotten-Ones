@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Game.unity
     guid: e221ab71552452347bd68bec0fc9fbc7
+  - enabled: 1
+    path: Assets/dreamlo/LeaderBoardSampleScene.unity
+    guid: f8e9907debfbe4aaa9c18fb200e5abf5
   m_configObjects: {}

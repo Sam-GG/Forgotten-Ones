@@ -14,6 +14,7 @@ public class Enemy : Drop
     private float nextTimeToShoot = 0;
     public float bulletForce = 20f;
     public float fireRate = 2f;
+    public GameObject enemyExplosion;
     Vector3 enemyDeathLocation;
 
     public void health(int damage, Vector3 pos){ // get the damage and the location of the hit
@@ -39,11 +40,14 @@ public class Enemy : Drop
     {
         
         //Drop drop = GameObject.Find("SpaceShip").GetComponent<Drop>();
-        float rand = Random.Range(0, 10);
-        if (rand >= 6 && rand <= 8)
+        float rand = Random.Range(0, 25);
+        if (rand >= 7 && rand <= 8)
         {
             CreateDrop(pos, dropPrefab, dropPrefab1, dropPrefab2);
         }
+        ScoreScript.scoreValue += 10;
+        SoundManager.PlaySound("ExplosionSound");
+        Instantiate(enemyExplosion, pos, Quaternion.identity);
         Destroy(gameObject);
     }
 
