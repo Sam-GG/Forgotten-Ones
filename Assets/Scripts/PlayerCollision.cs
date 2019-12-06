@@ -14,9 +14,7 @@ public class PlayerCollision : MonoBehaviour
         if (player.GodMode != true) {
             if (col.gameObject.tag.Equals("Enemy"))
             {
-                SoundManager.PlaySound("ExplosionSound");
-                movement.enabled = false;
-                FindObjectOfType<GameManager>().EndGame();
+                Player.Health -= 200;
             }
         } 
 		

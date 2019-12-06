@@ -5,13 +5,14 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-	public static AudioClip LaserSound, ExplosionSound;
+	public static AudioClip LaserSound, ExplosionSound, laser5;
 	static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
     {
         LaserSound = Resources.Load<AudioClip> ("LaserSound");
         ExplosionSound = Resources.Load<AudioClip> ("ExplosionSound");
+        laser5 = Resources.Load<AudioClip> ("laser5");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -32,6 +33,9 @@ public class SoundManager : MonoBehaviour
             case "ExplosionSound":
                 audioSrc.PlayOneShot(ExplosionSound);
                 break;
-    	}
+            case "laser5":
+                audioSrc.PlayOneShot(laser5);
+                break;
+        }
     }
 }

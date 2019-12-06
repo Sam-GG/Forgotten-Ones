@@ -19,7 +19,7 @@ public class EnemyBullet : MonoBehaviour
         {
             Player player = GameObject.Find("SpaceShip").GetComponent<Player>();
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
-            player.Health -= 100;      
+            Player.Health -= 100;      
             GameObject flash = Instantiate(canvasFlash, transform.position, Quaternion.identity);
             Destroy(flash, 0.1f);
             GameObject explosion = Instantiate(ParticleSystemCollision, transform.position, Quaternion.identity);

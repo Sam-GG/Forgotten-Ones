@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public int Health = 500;
+    public static int Health = 500;
     public Weapon currentGun;
     public WeaponManager wm;
     public bool GodMode;

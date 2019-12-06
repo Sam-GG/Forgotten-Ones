@@ -22,7 +22,7 @@ public class Level : MonoBehaviour
     private int a; //random num Gen for State 2 shooting type's Movement Pattern
     private int numTimesXisZero = 0;
     private float enemyFireRate = 2f;   //smaller is faster
-    int nextLevel = 500;
+    int nextLevel = 750;
     bool changingLevels = false;
     //Text lvlUp;
 
@@ -185,7 +185,7 @@ public class Level : MonoBehaviour
             if (ScoreScript.scoreValue >= nextLevel)
             {
                 NextLevel.lvl += 1;
-                nextLevel += 500;
+                nextLevel += 750;
                 
                 changingLevels = true;
                 EnemySpeed += 3f;

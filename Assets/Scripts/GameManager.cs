@@ -21,8 +21,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator MyCoroutine()
     {
-
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(3);
     }
 
     public void Restart()

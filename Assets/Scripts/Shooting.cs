@@ -31,6 +31,7 @@ public class Shooting : MonoBehaviour
     {
         GameObject bullet;
         player = GameObject.Find("SpaceShip").GetComponent<Player>();
+        SoundManager.PlaySound("laser5");
         if (player.currentGun.rarity == 1)
         {
             bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
